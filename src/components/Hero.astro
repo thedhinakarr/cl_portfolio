@@ -1,0 +1,118 @@
+---
+---
+
+<section class="hero">
+  <div class="container hero-container">
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      <span class="micro">Leapfrogs '26 &middot; BTH &times; Lund &times; HKR &middot; Karlskrona, SE</span>
+    </div>
+
+    <h1 class="display hero-headline">
+      A used-car guide<br />for the <em>carbon market</em>.
+    </h1>
+
+    <p class="hero-lede">
+      I'm <strong>Abhinav Annareddy</strong>. I'm building <strong>CarbonLens</strong> — an AI-powered fair-value calculator for the Voluntary Carbon Market. It tells corporate buyers if the price a broker just quoted is reasonable. Nobody else does this.
+    </p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="micro">Now</span>
+        <span class="hero-meta-value">Founder, CarbonLens</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="micro">Stage</span>
+        <span class="hero-meta-value">MVP shipping August 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="micro">Showcase</span>
+        <span class="hero-meta-value">TechBBQ Copenhagen, Sept 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="micro">Status</span>
+        <span class="hero-meta-value">Open to conversations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-headline {
+    font-size: clamp(72px, 12vw, 180px);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+    max-width: 14ch;
+  }
+
+  .hero-lede {
+    font-family: var(--font-sans);
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--muted-foreground);
+    max-width: 620px;
+  }
+
+  .hero-lede strong {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 20px;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-meta-value {
+    font-family: var(--font-mono);
+    font-size: var(--fs-sm);
+    font-weight: 400;
+    letter-spacing: var(--tracking-mono);
+    color: var(--foreground);
+  }
+
+  @media (max-width: 768px) {
+    .hero-meta {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-headline {
+      font-size: clamp(48px, 12vw, 180px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-meta {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

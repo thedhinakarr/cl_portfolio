@@ -1,0 +1,168 @@
+---
+---
+
+<section class="billboard section">
+  <div class="container">
+    <div class="marker">
+      <span class="num">01</span>
+      <span class="marker-dot"></span>
+      <span>Live data</span>
+      <span class="marker-dot"></span>
+      <span>EU ETS spot</span>
+      <span class="marker-dot"></span>
+      <span>CarbonLens API</span>
+    </div>
+
+    <div class="billboard-live">
+      <span class="pulse"></span>
+      <span class="micro">Live &middot; Updated May 9, 2026 — 14:22 CET</span>
+    </div>
+
+    <div class="billboard-price">
+      <span class="billboard-currency num">&euro;</span><span class="billboard-integer num" id="billboard-counter" data-counter="67">0</span><span class="billboard-decimal num">.42</span>
+    </div>
+
+    <div class="billboard-grid">
+      <div class="billboard-stat">
+        <span class="micro">24h change</span>
+        <span class="billboard-stat-value num accent">
+          <i class="ph-bold ph-arrow-up-right" style="font-size: 14px;"></i> +2.3%
+        </span>
+      </div>
+      <div class="billboard-stat">
+        <span class="micro">Fair values today</span>
+        <span class="billboard-stat-value num">156</span>
+      </div>
+      <div class="billboard-stat">
+        <span class="micro">Avg. confidence</span>
+        <span class="billboard-stat-value num">87.4%</span>
+      </div>
+      <div class="billboard-stat">
+        <span class="micro">Sentiment</span>
+        <span class="billboard-stat-value accent">Bullish</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const easeOutExpo = (t: number): number => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+
+  function initCounter(): void {
+    const el = document.getElementById('billboard-counter');
+    if (!el) return;
+
+    const target = parseInt(el.getAttribute('data-counter') || '0', 10);
+    let hasRun = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasRun) {
+            hasRun = true;
+            observer.disconnect();
+            animateCounter(el, target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+  }
+
+  function animateCounter(el: HTMLElement, target: number): void {
+    const duration = 800;
+    const startTime = performance.now();
+
+    function tick(now: number): void {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutExpo(progress);
+      const current = Math.round(easedProgress * target);
+      el.textContent = current.toString();
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  initCounter();
+</script>
+
+<style>
+  .billboard-live {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .billboard-price {
+    display: flex;
+    align-items: baseline;
+    line-height: 0.85;
+    margin-bottom: clamp(48px, 6vw, 80px);
+    /* Reserve space to prevent CLS */
+    min-height: clamp(140px, 26vw, 380px);
+  }
+
+  .billboard-integer {
+    font-size: clamp(140px, 26vw, 380px);
+    font-weight: 500;
+    letter-spacing: var(--tracking-tighter);
+    color: var(--foreground);
+  }
+
+  .billboard-currency {
+    font-size: clamp(60px, 10vw, 160px);
+    font-weight: 400;
+    color: var(--muted-foreground);
+    margin-right: 4px;
+  }
+
+  .billboard-decimal {
+    font-size: clamp(60px, 10vw, 160px);
+    font-weight: 400;
+    color: var(--muted-foreground);
+  }
+
+  .billboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+
+  .billboard-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .billboard-stat-value {
+    font-family: var(--font-mono);
+    font-size: var(--fs-lg);
+    font-weight: 500;
+    letter-spacing: var(--tracking-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .billboard-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .billboard-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

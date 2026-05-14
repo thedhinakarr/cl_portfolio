@@ -1,0 +1,55 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Abhinav Annareddy — CarbonLens',
+  description = 'AI-powered fair-value engine for the Voluntary Carbon Market. Leapfrogs 2026, BTH × Lund × HKR.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- OG -->
+    <meta property="og:title" content="Abhinav Annareddy — CarbonLens" />
+    <meta property="og:description" content="A used-car guide for the carbon market." />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:url" content="https://abhinav.carbonlens.app" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abhinav Annareddy — CarbonLens" />
+    <meta name="twitter:description" content="A used-car guide for the carbon market." />
+    <meta name="twitter:image" content="/og.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+
+    <!-- Styles -->
+    <style is:global>
+      @import '../styles/tokens.css';
+      @import '../styles/global.css';
+      @import '../styles/animations.css';
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

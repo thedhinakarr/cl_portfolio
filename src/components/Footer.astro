@@ -1,0 +1,42 @@
+---
+const today = new Date().toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-left">
+      &copy; 2026 Abhinav Annareddy &middot; Built with CarbonLens DS v2
+    </span>
+    <span class="footer-right">
+      Last edit &middot; {today}
+    </span>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-left,
+  .footer-right {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    letter-spacing: var(--tracking-mono);
+    color: var(--muted-foreground);
+  }
+</style>

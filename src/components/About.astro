@@ -1,0 +1,108 @@
+---
+const stack = [
+  { label: 'Education', items: ['BTH (MSc)', 'Lund University', 'HKR', 'GITAM (BTech)'] },
+  { label: 'Models', items: ['PyTorch', 'XGBoost', 'FinBERT', 'LSTM', 'SHAP'] },
+  { label: 'Backend', items: ['Python', 'FastAPI', 'PostgreSQL', 'Redis'] },
+  { label: 'Frontend', items: ['Next.js', 'TypeScript', 'Astro', 'React'] },
+  { label: 'Cloud', items: ['AWS', 'Azure', 'Docker', 'Vercel'] },
+];
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="marker">
+      <span class="num">04</span>
+      <span class="marker-dot"></span>
+      <span>About</span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <h2 class="display about-heading">
+          Computer science by training. ML by trade. <em>Climate fintech</em> by conviction.
+        </h2>
+      </div>
+
+      <div class="about-right">
+        <p class="about-body">
+          I'm a Leapfrogs 2026 scholar at BTH in Karlskrona, Sweden — a cross-institutional programme with Lund University and HKR. My thesis is on applying machine learning to fair-value pricing in the Voluntary Carbon Market, a space where opacity is the norm and data is scarce.
+        </p>
+        <p class="about-body">
+          Before this, I spent two years building data pipelines and ML models in industry — reducing batch error rates from 12% to under 1%, building RAG systems on AWS Bedrock, and shipping SHAP-driven decision tools that surfaced operational levers nobody was measuring.
+        </p>
+
+        <div class="stack">
+          {stack.map((row) => (
+            <div class="stack-row">
+              <span class="stack-label micro">{row.label}</span>
+              <div class="stack-items">
+                {row.items.map((item) => (
+                  <span class="pill">{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(40px, 6vw, 80px);
+  }
+
+  .about-heading {
+    font-size: clamp(44px, 5.5vw, 80px);
+    line-height: 1.0;
+  }
+
+  .about-body {
+    font-family: var(--font-sans);
+    font-size: var(--fs-base);
+    line-height: 1.7;
+    color: var(--muted-foreground);
+    margin-bottom: 20px;
+  }
+
+  .stack {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stack-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .stack-row:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stack-label {
+    padding-top: 1px;
+  }
+
+  .stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .stack-row {
+      grid-template-columns: 120px 1fr;
+    }
+  }
+</style>

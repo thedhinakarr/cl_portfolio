@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@300..700&display=swap');
+
+:root {
+  /* Faces — TWO families, no serif */
+  --font-sans:    "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-heading: var(--font-mono);
+  --font-display: var(--font-mono);
+
+  /* Scale — 12-step, tops out at 256px */
+  --fs-xs:   0.75rem;     /* 12 */
+  --fs-sm:   0.8125rem;   /* 13 */
+  --fs-base: 0.9375rem;   /* 15 */
+  --fs-md:   1.125rem;    /* 18 */
+  --fs-lg:   1.375rem;    /* 22 */
+  --fs-xl:   1.75rem;     /* 28 */
+  --fs-2xl:  2.5rem;      /* 40 */
+  --fs-3xl:  3.5rem;      /* 56 */
+  --fs-4xl:  5rem;        /* 80 */
+  --fs-5xl:  8rem;        /* 128 */
+  --fs-6xl:  12rem;       /* 192 */
+  --fs-7xl:  16rem;       /* 256 */
+
+  /* Tracking — display sits much tighter than UI */
+  --tracking-tightest: -0.05em;
+  --tracking-tighter:  -0.04em;
+  --tracking-tight:    -0.02em;
+  --tracking-mono:     -0.005em;
+  --tracking-wide:      0.06em;
+
+  /* Color — DARK is the default and the only theme that ships */
+  --background:           oklch(0.143 0.006 107.1);  /* warm-black, hue 107 */
+  --foreground:           oklch(0.988 0.003 106.5);
+  --card:                 oklch(0.205 0.011 107.4);  /* surface lift, no border needed */
+  --muted:                oklch(0.260 0.012 107.4);
+  --muted-foreground:     oklch(0.690 0.020 106.9);
+
+  --primary:              oklch(0.723 0.219 149.579); /* THE green */
+  --primary-foreground:   oklch(0.143 0.006 107.1);   /* dark text on bright green */
+  --destructive:          oklch(0.704 0.191 22.216);  /* terracotta — bearish only */
+
+  --border:               oklch(1 0 0 / 0.08);
+  --border-strong:        oklch(1 0 0 / 0.18);
+  --ring:                 oklch(0.723 0.219 149.579);
+
+  /* Chart ramp — DATA VIZ ONLY, never brand surfaces */
+  --chart-1: oklch(0.871 0.150 154.449);
+  --chart-2: oklch(0.723 0.219 149.579);
+  --chart-3: oklch(0.627 0.194 149.214);
+  --chart-4: oklch(0.527 0.154 150.069);
+  --chart-5: oklch(0.448 0.119 151.328);
+
+  /* Radius — 10px base. Tighter, more architectural. */
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+}
+
+html { color-scheme: dark; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+::selection { background: var(--primary); color: var(--primary-foreground); }
+
+/* Display class — Geist Mono at billboard scale */
+.display {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tightest);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+.display em { font-style: normal; color: var(--primary); }  /* accent = brand green, never italic */
+
+/* Numerals */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  letter-spacing: var(--tracking-mono);
+}
+
+/* Micro label */
+.micro {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--muted-foreground);
+}

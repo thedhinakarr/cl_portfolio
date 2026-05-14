@@ -1,0 +1,25 @@
+---
+interface Props {
+  size?: 'sm' | 'md';
+}
+
+const { size = 'md' } = Astro.props;
+const dim = size === 'sm' ? '28px' : '36px';
+const iconSize = size === 'sm' ? '14px' : '18px';
+---
+
+<div class="leaf-mark" style={`width: ${dim}; height: ${dim};`}>
+  <i class="ph-fill ph-leaf" style={`font-size: ${iconSize};`}></i>
+</div>
+
+<style>
+  .leaf-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    border-radius: var(--radius-sm);
+    color: var(--primary-foreground);
+    flex-shrink: 0;
+  }
+</style>
