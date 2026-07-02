@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abhinav.carbonlens.app/sitemap-index.xml
+Sitemap: https://carbonlenz.com/sitemap-index.xml
