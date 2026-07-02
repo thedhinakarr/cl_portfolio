@@ -1,10 +1,9 @@
 ---
 const stack = [
-  { label: 'Education', items: ['BTH (MSc)', 'Lund University', 'HKR', 'GITAM (BTech)'] },
-  { label: 'Models', items: ['PyTorch', 'XGBoost', 'FinBERT', 'LSTM', 'SHAP'] },
-  { label: 'Backend', items: ['Python', 'FastAPI', 'PostgreSQL', 'Redis'] },
-  { label: 'Frontend', items: ['Next.js', 'TypeScript', 'Astro', 'React'] },
-  { label: 'Cloud', items: ['AWS', 'Azure', 'Docker', 'Vercel'] },
+  { label: 'AI', items: ['Groq', 'Llama 3.3 70B', 'Tool-calling', 'Schema-constrained extraction'] },
+  { label: 'Backend', items: ['Python', 'FastAPI', 'Pydantic', 'Docker'] },
+  { label: 'Frontend', items: ['Next.js', 'TypeScript', 'Recharts', 'Motion'] },
+  { label: 'Data', items: ['EU CBAM Regulation 2023/956', 'Reg (EU) 2025/2621', 'Dir (EU) 2023/959', 'DG TAXUD'] },
 ];
 ---
 
@@ -19,16 +18,16 @@ const stack = [
     <div class="about-grid">
       <div class="about-left">
         <h2 class="display about-heading">
-          Computer science by training. ML by trade. <em>Climate fintech</em> by conviction.
+          EU importers pay carbon tax from <em>2026</em>. Their suppliers send <em>messy evidence</em>. CarbonLenz turns that mess into money.
         </h2>
       </div>
 
       <div class="about-right">
         <p class="about-body">
-          The CarbonLenz team is part of Leapfrogs 2026 at BTH in Karlskrona, Sweden — a cross-institutional programme with Lund University and HKR. The research thesis looks at applying machine learning to CBAM evidence analysis: turning unstructured supplier declarations into importer cost exposure under the EU's 2026 carbon border mechanism, where data is scarce and evidence quality is the lever.
+          The EU Carbon Border Adjustment Mechanism (CBAM) starts its definitive phase in 2026. Importers of iron &amp; steel, cement, aluminium, fertilisers, hydrogen, and electricity must declare embedded emissions and surrender CBAM certificates. If the supplier's evidence is incomplete or unverified, the importer falls onto punitive EU default values — and pays more.
         </p>
         <p class="about-body">
-          The team brings prior industry experience building data pipelines and ML systems — reducing batch error rates from 12% to under 1%, building RAG systems on AWS Bedrock, and shipping SHAP-driven decision tools that surfaced operational levers nobody was measuring.
+          CarbonLenz uses AI to read supplier evidence, extract the CBAM fields, check what's missing, and calculate the financial gap between the forced default and the achievable-if-verified cost — across the full 2026–2034 phase-in ramp. All calculations use official EU data with source citations.
         </p>
 
         <div class="stack">
