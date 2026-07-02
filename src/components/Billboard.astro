@@ -6,42 +6,42 @@
     <div class="marker">
       <span class="num">01</span>
       <span class="marker-dot"></span>
-      <span>Live data</span>
+      <span>Official data</span>
       <span class="marker-dot"></span>
-      <span>EU ETS spot</span>
+      <span>CBAM Q1 2026</span>
       <span class="marker-dot"></span>
-      <span>CarbonLens API</span>
+      <span>Reg (EU) 2025/2621</span>
     </div>
 
     <div class="billboard-live">
       <span class="pulse"></span>
-      <span class="micro">Live &middot; Updated May 9, 2026 — 14:22 CET</span>
+      <span class="micro">Q1 2026 &middot; Published 7 Apr 2026</span>
     </div>
 
     <div class="billboard-price">
-      <span class="billboard-currency num">&euro;</span><span class="billboard-integer num" id="billboard-counter" data-counter="67">0</span><span class="billboard-decimal num">.42</span>
+      <span class="billboard-currency num">&euro;</span><span class="billboard-integer num" id="billboard-counter" data-counter="75">0</span><span class="billboard-decimal num">.36</span>
     </div>
 
     <div class="billboard-grid">
       <div class="billboard-stat">
-        <span class="micro">24h change</span>
-        <span class="billboard-stat-value num accent">
-          <i class="ph-bold ph-arrow-up-right" style="font-size: 14px;"></i> +2.3%
-        </span>
+        <span class="micro">Phase-in 2026</span>
+        <span class="billboard-stat-value num accent">2.5%</span>
       </div>
       <div class="billboard-stat">
-        <span class="micro">Fair values today</span>
-        <span class="billboard-stat-value num">156</span>
+        <span class="micro">Default markup</span>
+        <span class="billboard-stat-value num">+10%</span>
       </div>
       <div class="billboard-stat">
-        <span class="micro">Avg. confidence</span>
-        <span class="billboard-stat-value num">87.4%</span>
+        <span class="micro">India default</span>
+        <span class="billboard-stat-value num">4.28 tCO<sub style="font-size: 0.65em;">2</sub>e/t</span>
       </div>
       <div class="billboard-stat">
-        <span class="micro">Sentiment</span>
-        <span class="billboard-stat-value accent">Bullish</span>
+        <span class="micro">CBAM sectors</span>
+        <span class="billboard-stat-value num">6</span>
       </div>
     </div>
+
+    <p class="micro billboard-footnote">Q1 2026 CBAM certificate price. Source: DG TAXUD. Default values: India, CN 7208, pre-markup.</p>
   </div>
 </section>
 
@@ -164,5 +164,10 @@
     .billboard-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .billboard-footnote {
+    margin-top: 20px;
+    opacity: 0.7;
   }
 </style>

@@ -11,17 +11,17 @@ export interface WorkEntry {
 export const work: readonly WorkEntry[] = [
   {
     year: 2026,
-    title: 'CarbonLens',
-    role: 'AI-powered fair-value engine for voluntary carbon credits. Founder, full-stack.',
-    tags: ['PyTorch', 'XGBoost', 'Next.js', 'FinBERT'],
+    title: 'CarbonLenz',
+    role: 'AI CBAM evidence scanner for EU importers. Extracts supplier emissions data, checks evidence gaps, calculates 2026–2034 cost exposure. Team, full-stack.',
+    tags: ['Groq', 'Llama 3.3', 'FastAPI', 'Next.js', 'Recharts'],
     status: 'Shipping',
     active: true,
-    href: 'https://carbonlens.app',
+    href: 'https://carbonlenz.com',
   },
   {
     year: 2025,
     title: 'LSTM equity forecasting',
-    role: 'Time-series prediction with walk-forward validation. The architectural ancestor of CarbonLens.',
+    role: 'Time-series prediction with walk-forward validation. The architectural ancestor of CarbonLenz.',
     tags: ['PyTorch', 'NumPy'],
     status: 'Archive',
   },

@@ -1,6 +1,6 @@
-# Abhinav Annareddy — CarbonLens Portfolio
+# CarbonLenz — Product Portfolio
 
-Personal portfolio for Abhinav Annareddy, founder of CarbonLens — an AI-powered fair-value engine for the Voluntary Carbon Market.
+Product portfolio for **CarbonLenz** — an AI-powered CBAM Evidence Scanner that turns messy supplier emissions evidence into EU CBAM cost, risk, and supplier action.
 
 ## Stack
 
@@ -8,7 +8,8 @@ Personal portfolio for Abhinav Annareddy, founder of CarbonLens — an AI-powere
 - **Typography:** Geist Mono (display/headings) + Geist (body)
 - **Icons:** Phosphor Icons (regular, fill, bold weights)
 - **Styling:** Hand-written CSS from design tokens (no Tailwind, no UI library)
-- **Deploy:** Vercel (static)
+- **Product build:** Groq (Llama 3.3 70B) + FastAPI + Next.js + Recharts
+- **Deploy:** Netlify (static)
 
 ## Getting started
 
